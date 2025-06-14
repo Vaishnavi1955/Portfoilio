@@ -1,10 +1,13 @@
-/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-  output: 'export',
+  output: isProd ? 'export' : undefined,
+  basePath: isProd ? '/Portfoilio' : '',
+  assetPrefix: isProd ? '/Portfoilio/' : '',
+  trailingSlash: true,
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  trailingSlash: true, // Helps with relative asset loading on Netlify
 };
 
 export default nextConfig;
