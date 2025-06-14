@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+const isGithubPages = process.env.DEPLOY_TARGET === 'gh-pages';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+module.exports = {
+  assetPrefix: isGithubPages ? '/Portfoilio/' : '',
+  output: 'export',
+  images: {
+    unoptimized: true
+  }
 };
-
-export default nextConfig;
