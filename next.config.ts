@@ -1,9 +1,11 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: "/Portfolio", // must match the GitHub repo name **exactly**
-  assetPrefix: "/Portfolio", // required for images and CSS to load
-  trailingSlash: true, // ensures paths end with /
+  output: 'export',
+  basePath: '/Portfoilio',
+  assetPrefix: '/Portfoilio/',
+  images: {
+    unoptimized: true, // Required for static export
+  },
 };
 
 export default nextConfig;
-
